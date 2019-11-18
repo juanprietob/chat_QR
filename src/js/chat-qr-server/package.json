@@ -19,7 +19,6 @@
     "chat-qr-bitcoin": "file:../chat-qr-bitcoin",
     "chat-qr-db": "file:../chat-qr-db",
     "chat-qr-static": "file:../chat-qr-static",
-    "chat-qr-transaction": "file:../chat-qr-transaction",
     "couch-provider": "^3.0.1",
     "hapi-jwt-couch": "^4.2.0",
     "lout": "^11.2.3",
