@@ -31,7 +31,6 @@ class Business extends Component{
         latitude: ""
       },
       "business_type": "",
-      "url": "",
       "description": ""
     };
 
@@ -83,6 +82,7 @@ class Business extends Component{
       })
       .catch(alert)
     }else{
+      console.log(newBusiness)
       self.chatqrservice.createBusiness(newBusiness)
       .then(function(){
         businesses.push(newBusiness);
@@ -265,12 +265,12 @@ class Business extends Component{
                 <Form.Label>Coordinates</Form.Label>
                 <Form.Control type="number" placeholder="Latitude" value={coordinates.latitude} onChange={(e)=>{
                   var business = newBusiness;
-                  business.coordinates.latitude = e.target.value;
+                  business.coordinates.latitude = Number(e.target.value);
                   this.setState({...this.state, newBusiness: business});
                 }}/>
                 <Form.Control type="number" placeholder="Longitude" value={coordinates.longitude} onChange={(e)=>{
                   var business = newBusiness;
-                  business.coordinates.longitude = e.target.value;
+                  business.coordinates.longitude = Number(e.target.value);
                   this.setState({...this.state, newBusiness: business});
                 }}/>
               </Form.Group>
@@ -323,7 +323,7 @@ class Business extends Component{
               </Form.Group>
 
               <Form.Group controlId="whatsapp">
-                <Form.Label>Google maps</Form.Label>
+                <Form.Label>Whatsapp</Form.Label>
                 <Form.Control type="url" placeholder="Whatsapp" value={newBusiness.whatsapp} onChange={(e)=>{
                   var business = newBusiness;
                   business.whatsapp = e.target.value;
